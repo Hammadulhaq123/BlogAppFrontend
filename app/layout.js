@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           <div className='w-60 h-full hidden lg:flex flex-col fixed top-16 left-0'>
             <Sidebar />
           </div>
-          <div className='w-full lg:w-[calc(100%-15rem)] absolute top-16 right-0'>
+          <div className='w-full lg:w-[calc(100%-15rem)] overflow-y-auto overflow-x-hidden absolute top-16 right-0'>
             {children}
             <Footer />
           </div>
