@@ -1,15 +1,11 @@
 import Header from '@components/Header'
 import '../globals.css'
 import { Inter } from 'next/font/google'
-import Footer from '@components/Footer'
 import Sidebar from '@components/Sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-    title: 'Bloggify',
-    description: 'Present your creative writing like a social media post.',
-}
+
 
 export default function RootLayout({ children }) {
     return (
@@ -22,7 +18,6 @@ export default function RootLayout({ children }) {
                     </div>
                     <div className='w-full lg:w-[calc(100%-15rem)] overflow-y-auto overflow-x-hidden absolute top-16 right-0'>
                         {children}
-                        {/* <Footer /> */}
                     </div>
                 </div>
             </body>

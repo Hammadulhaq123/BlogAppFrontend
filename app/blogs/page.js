@@ -1,7 +1,9 @@
 'use client'
 import Loader from "@components/Loader";
 import Post from "@components/Post";
+import Alert from "@components/Alert";
 import { useState, useEffect } from "react"
+import Head from "next/head";
 
 
 const page = () => {
@@ -15,7 +17,7 @@ const page = () => {
     const fetchData = async () => {
         setLoading(true);
         try {
-            const response = await fetch('http://127.0.0.1:8000/api');
+            const response = await fetch('http://127.0.0.1:8000/api/');
             const result = await response.json();
             setData(result);
             setLoading(false);
@@ -24,21 +26,25 @@ const page = () => {
         }
     }
     console.log(data)
+
     return (
-        <div className="h-auto p-8">
-            {loading ? (
-                <Loader />
-            ) : data &&
-            <div className="flex flex-wrap p-4 gap-4">
-                {
-                    data.map((post) => (
-                        <Post title={post.title} content={post.content} />
-                    ))
+        <>
+
+            <div className="h-auto p-8">
+                {loading ? (
+                    <Loader />
+                ) : data &&
+                <div className="flex flex-wrap p-4 gap-4">
+                    {
+                        data.map((post) => (
+                            <Post title={post.title} content={post.content} />
+                        ))
+                    }
+                </div>
+
                 }
             </div>
-
-            }
-        </div>
+        </>
     );
 }
 
