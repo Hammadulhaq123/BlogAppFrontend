@@ -37,7 +37,7 @@ const page = () => {
                 <div className="flex flex-wrap p-4 gap-4">
                     {
                         data.map((post) => (
-                            <Post title={post.title} content={post.content} />
+                            <Post title={post.title} content={post.content} slug={post.slug} />
                         ))
                     }
                 </div>
