@@ -38,6 +38,11 @@
   -webkit-text-fill-color: transparent;
 }
 
+.bg-gradient {
+  background: -webkit-linear-gradient(45deg, #615DFF, #3DD9EB);
+
+}
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
