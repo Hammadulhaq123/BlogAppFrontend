@@ -1,11 +1,47 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
+import axiosInstance from "@axios"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 
 const page = () => {
+
+    const router = useRouter()
+
+    const initialFormData = Object.freeze({
+        email: "",
+        password: "",
+    })
+
+    const [formData, setFormData] = useState(initialFormData);
+
+    const handleChange = (e) => {
+        setFormData((prevData) => ({
+            ...prevData,
+            // trimming the whitespaces from the value
+            [e.target.name]: e.target.value.trim(),
+        }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(formData)
+
+        axiosInstance
+            .post(
+                'token/', {
+                "email": formData.email,
+                "password": formData.password,
+
+            }
+            )
+            .then((res) => {
+                router.push("/blogs");
+                console.log(res);
+                console.log(res.data);
+            })
     }
 
     return (
@@ -26,12 +62,12 @@ const page = () => {
 
                             <div className="grid grid-cols-1 gap-5 mt-5">
                                 <input className="w-full bg-white dark:bg-[#1c1c1c] dark:text-white text-[#1c1c1c] mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                                    name="email" type="email" placeholder="Email" required />
+                                    name="email" type="email" onChange={handleChange} placeholder="Email" required />
                             </div>
 
                             <div className="grid grid-cols-1 gap-5 mt-5">
                                 <input className="w-full bg-white dark:bg-[#1c1c1c] dark:text-white text-[#1c1c1c] mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                                    name="password" type="text" placeholder="Password" minLength={8} required />
+                                    name="password" onChange={handleChange} type="password" placeholder="Password" minLength={8} required />
                             </div>
 
 
