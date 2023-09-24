@@ -4,7 +4,7 @@ const page = () => {
   return (
     <>
       <header>
-        <nav className="fixed top-0 left-0 w-full z-50 bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-[#1c1c1c]">
+        <nav className="w-full z-50 bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-[#1c1c1c]">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <Link href="/" className="flex items-center">
               <Image src='dark-logo.svg' width={40} height={30} alt="Logo" />
