@@ -22,6 +22,7 @@ const page = () => {
             const result = await response.json();
             if (result.length >= 1) {
                 setData(result);
+                setLoading(false);
             } else {
                 setLoading(false);
                 setData(null)
