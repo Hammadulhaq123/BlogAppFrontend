@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
                     <Sidebar />
 
                 </div>
-                <div className='w-full md:w-[calc(100%-15rem)] overflow-y-auto overflow-x-hidden absolute top-16 right-0'>
+                <div className='w-full md:w-[calc(100%-18rem)] overflow-y-auto overflow-x-hidden absolute top-16 right-0'>
                     {children}
                 </div>
             </div>

@@ -1,9 +1,10 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 
 const Header = () => {
-    const checkUser = localStorage.getItem("access_token");
+    const [checkUser, setCheckUser] = useState(localStorage.getItem("access_token"));
     return (
         <>
 

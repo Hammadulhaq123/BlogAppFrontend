@@ -36,7 +36,7 @@ const page = () => {
     return (
         <>
 
-            <div className="h-auto p-8">
+            <div className="h-auto p-4">
                 {loading ? (
                     <Loader />
                 ) : data ?
