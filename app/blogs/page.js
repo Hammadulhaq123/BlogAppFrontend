@@ -42,8 +42,8 @@ const page = () => {
                 ) : data ?
                     <div className="flex flex-wrap p-4 gap-4">
                         {
-                            data.map((post) => (
-                                <Post title={post.title} content={post.content} slug={post.slug} />
+                            data.map((post, key) => (
+                                <Post key={key} title={post.title} content={post.content} slug={post.slug} />
                             ))
                         }
                     </div>
